@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { convertFactorial } from "../utils/ConvertFactorial";
+import BackToHomeButton from "../components/BackToHome";
 const FactorialCombination = () => {
     const [valueN, setValueN] = useState('');
     const [valueK, setValueK] = useState('');
@@ -36,7 +37,7 @@ const FactorialCombination = () => {
                 )}
                 <button className="submit-btn" type="submit">Calcular</button>
             </form>
-
+            <BackToHomeButton />
         </div>
     )
 }

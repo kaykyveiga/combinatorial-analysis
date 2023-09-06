@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { convertFactorial } from "../utils/ConvertFactorial";
+import BackToHomeButton from "../components/BackToHome";
 const FactorialDivision = () => {
     const [numerador, setNumerador] = useState('');
     const [denominador, setDenominador] = useState('');
@@ -40,6 +41,7 @@ const FactorialDivision = () => {
                 </span>
                 <button className="submit-btn">Calcular</button>
             </form>
+            <BackToHomeButton />
         </div>
     )
 }

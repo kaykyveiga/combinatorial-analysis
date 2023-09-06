@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { convertFactorial } from "../utils/ConvertFactorial";
+import BackToHomeButton from "../components/BackToHome";
 const FactorialArrangement = () => {
     const [valueN, setValueN] = useState('');
     const [valueP, setValueP] = useState('');
@@ -39,7 +40,7 @@ const FactorialArrangement = () => {
                 </span>
                 <button className="submit-btn">Calcular</button>
             </form>
-
+            <BackToHomeButton />
         </div>
     )
 }
