@@ -1,17 +1,21 @@
 import { useState } from "react";
 import { convertFactorial } from "../utils/ConvertFactorial";
-import BackToHomeButton from "../components/BackToHome";
+import BackToHomeButton from "../components/GlobalButtons";
+
 const FactorialNumber = () => {
     const [factorialNumber, setFactorialNumber] = useState('');
     const [result, setResult] = useState(null);
+    const [formSubmitted, setFormSubmitted] = useState(false); 
+
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const factorial = convertFactorial(factorialNumber);
         setResult(factorial);
+        setFormSubmitted(true); 
     };
+
     return (
-        <div className="conteiner">
+        <div className="container">
             <h2 className="title">Números fatoriais</h2>
             <p className="text">
                 Números fatoriais são uma sequência de números inteiros positivos que são obtidos a partir do produto de
@@ -22,10 +26,18 @@ const FactorialNumber = () => {
             <form onSubmit={handleSubmit} className="form">
                 <label className="label-custom">
                     <span>Digite o número:</span>
-                    <input type="number" name="factorialNumber" id="factorialNumber" required value={factorialNumber} onChange={(e) => setFactorialNumber(e.target.value)} />
+                    <input
+                        type="number"
+                        name="factorialNumber"
+                        id="factorialNumber"
+                        required
+                        value={factorialNumber}
+                        onChange={(e) => setFactorialNumber(e.target.value)}
+                        disabled={formSubmitted}
+                    />
                 </label>
                 <span className="result">
-                    {result !== null && (
+                    {factorialNumber && result != null && (
                         <>
                             <p>O resultado é {result}.</p>
                             <p>Foi realizado {factorialNumber}!</p>
@@ -39,4 +51,4 @@ const FactorialNumber = () => {
     )
 }
 
-export default FactorialNumber
+export default FactorialNumber;

@@ -18,8 +18,3 @@
     flex: 1;
     transition: transform 0.6s ease;
 }
-
-.active:hover{
-    opacity: 1;
-    transform: scale(1.05);
-}

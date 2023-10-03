@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { convertFactorial } from "../utils/ConvertFactorial";
-import BackToHomeButton from "../components/BackToHome";
+import BackToHomeButton from "../components/GlobalButtons";
 const FactorialDivision = () => {
     const [numerador, setNumerador] = useState('');
     const [denominador, setDenominador] = useState('');
     const [result, setResult] = useState(null);
+    const [formSubmitted, setFormSubmitted] = useState(false); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const fatorial = convertFactorial(numerador) / convertFactorial(denominador);
         setResult(fatorial)
+        setFormSubmitted(true); 
     };
     return (
-        <div className="conteiner">
+        <div className="container">
             <h2 className="title">Divisão Fatorial</h2>
             <p className="text">
                 A divisão de números fatoriais é uma operação matemática que envolve a divisão do fatorial de um número
@@ -25,11 +27,11 @@ const FactorialDivision = () => {
             <form className="form" onSubmit={handleSubmit}>
                 <label>
                     <span>Digite o numerador:</span>
-                    <input required type="number" name="numerador" id="numerador" value={numerador} onChange={(e) => setNumerador(e.target.value)} />
+                    <input required type="number" name="numerador" id="numerador" value={numerador} onChange={(e) => setNumerador(e.target.value)} disabled={formSubmitted} />
                 </label>
                 <label>
                     <span>Digite o denominador</span>
-                    <input required type="number" name="denominador" id="denominador" value={denominador} onChange={(e) => setDenominador(e.target.value)} />
+                    <input required type="number" name="denominador" id="denominador" value={denominador} onChange={(e) => setDenominador(e.target.value)} disabled={formSubmitted}/>
                 </label>
                 <span className="result">
                     {result !== null && (

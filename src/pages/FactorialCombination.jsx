@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { convertFactorial } from "../utils/ConvertFactorial";
-import BackToHomeButton from "../components/BackToHome";
+import BackToHomeButton from "../components/GlobalButtons";
 const FactorialCombination = () => {
     const [valueN, setValueN] = useState('');
     const [valueK, setValueK] = useState('');
     const [result, setResult] = useState(null);
+    const [formSubmitted, setFormSubmitted] = useState(false); 
     const handleSubmit = (e) => {
         e.preventDefault();
         const factorialSubtraction = valueN - valueK;
         const factorial = convertFactorial(valueN) / (convertFactorial(valueK) * convertFactorial(factorialSubtraction));
         setResult(factorial);
+        setFormSubmitted(true); 
     };
     return (
-        <div className="conteiner">
+        <div className="container">
             <h2 className="title">Combinação Simples</h2>
             <p className="text">Combinação simples é uma técnica de contagem usada para calcular o número de maneiras diferentes que um
                 subconjunto de elementos pode ser escolhido de um conjunto maior, sem considerar a ordem dos elementos
@@ -23,11 +25,11 @@ const FactorialCombination = () => {
             <form className="form" onSubmit={handleSubmit}>
                 <label>
                     <span>Digite o valor de <strong>N!</strong></span>
-                    <input type="number" required name="n!" id="n!" value={valueN} onChange={(e) => setValueN(e.target.value)} />
+                    <input type="number" required name="n!" id="n!" value={valueN} onChange={(e) => setValueN(e.target.value)} disabled={formSubmitted} />
                 </label>
                 <label>
                     <span>Digite o valor de <strong>K!</strong></span>
-                    <input type="number" required name="k!" id="k!" value={valueK} onChange={(e) => setValueK(e.target.value)} />
+                    <input type="number" required name="k!" id="k!" value={valueK} onChange={(e) => setValueK(e.target.value)} disabled={formSubmitted} />
                 </label>
                 {result !== null && (
                     <>

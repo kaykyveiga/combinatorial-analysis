@@ -10,7 +10,7 @@ body {
   background-color: #f9fafc;
 }
 
-.conteiner {
+.container {
   display: flex;
   flex-direction: column;
   gap: .6rem;
@@ -34,7 +34,7 @@ body {
 .form input {
   background: #fff;
   margin: .5rem .2rem;
-  border-radius: 5px;
+  border-radius: .4rem;
   padding: .15rem;
   border: 1.8px solid #1385ffd1;
 }
@@ -49,5 +49,11 @@ body {
   border-radius: 1rem;
   border: none;
   padding: .3rem 1rem;
-  margin: .5rem 0;
+  margin: .5rem 0 0 ;
+}
+
+@media screen and (max-width : 600px) {
+  .container {
+    margin: 1rem -1rem;
+  }
 }
