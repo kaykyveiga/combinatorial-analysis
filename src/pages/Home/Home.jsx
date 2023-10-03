@@ -1,4 +1,4 @@
-import Nav from "../components/Nav"
+import Nav from "../../components/Nav/Nav"
 const Home = () => {
     return (
         <div className="container">

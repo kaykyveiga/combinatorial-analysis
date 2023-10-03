@@ -1,18 +1,21 @@
-import { useState } from "react";
-import { convertFactorial } from "../utils/ConvertFactorial";
-import BackToHomeButton from "../components/GlobalButtons";
+import { useCommonImports } from "../../hook/useCommonImports";
+
 const FactorialCombination = () => {
+    const { useState, convertFactorial, GlobalButtons } = useCommonImports();
+
     const [valueN, setValueN] = useState('');
     const [valueK, setValueK] = useState('');
     const [result, setResult] = useState(null);
-    const [formSubmitted, setFormSubmitted] = useState(false); 
+    const [formSubmitted, setFormSubmitted] = useState(false);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const factorialSubtraction = valueN - valueK;
         const factorial = convertFactorial(valueN) / (convertFactorial(valueK) * convertFactorial(factorialSubtraction));
         setResult(factorial);
-        setFormSubmitted(true); 
+        setFormSubmitted(true);
     };
+
     return (
         <div className="container">
             <h2 className="title">Combinação Simples</h2>
@@ -39,7 +42,7 @@ const FactorialCombination = () => {
                 )}
                 <button className="submit-btn" type="submit">Calcular</button>
             </form>
-            <BackToHomeButton />
+            <GlobalButtons />
         </div>
     )
 }

@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-import Home from './pages/Home.jsx';
-import FactorialNumber from './pages/FactorialNumber.jsx';
-import FactorialDivision from './pages/FactorialDivision.jsx';
-import FactorialArrangement from './pages/FactorialArrangement.jsx';
-import FactorialCombination from './pages/FactorialCombination.jsx';
+import Home from './pages/Home/Home.jsx';
+import FactorialNumber from './pages/FactorialNumber/FactorialNumber.jsx';
+import FactorialDivision from './pages/FactorialDivision/FactorialDivision.jsx';
+import FactorialArrangement from './pages/FactorialArrangement/FactorialArrangement.jsx';
+import FactorialCombination from './pages/FactorialCombination/FactorialCombination.jsx';
 
 
 import { createHashRouter, RouterProvider } from "react-router-dom"

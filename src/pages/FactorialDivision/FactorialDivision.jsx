@@ -1,18 +1,19 @@
-import { useState } from "react";
-import { convertFactorial } from "../utils/ConvertFactorial";
-import BackToHomeButton from "../components/GlobalButtons";
+import { useCommonImports } from "../../hook/useCommonImports";
+
 const FactorialDivision = () => {
+    const { useState, convertFactorial, GlobalButtons } = useCommonImports();
+
     const [numerador, setNumerador] = useState('');
     const [denominador, setDenominador] = useState('');
     const [result, setResult] = useState(null);
-    const [formSubmitted, setFormSubmitted] = useState(false); 
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const fatorial = convertFactorial(numerador) / convertFactorial(denominador);
         setResult(fatorial)
-        setFormSubmitted(true); 
+        setFormSubmitted(true);
     };
     return (
         <div className="container">
@@ -31,7 +32,7 @@ const FactorialDivision = () => {
                 </label>
                 <label>
                     <span>Digite o denominador</span>
-                    <input required type="number" name="denominador" id="denominador" value={denominador} onChange={(e) => setDenominador(e.target.value)} disabled={formSubmitted}/>
+                    <input required type="number" name="denominador" id="denominador" value={denominador} onChange={(e) => setDenominador(e.target.value)} disabled={formSubmitted} />
                 </label>
                 <span className="result">
                     {result !== null && (
@@ -43,7 +44,7 @@ const FactorialDivision = () => {
                 </span>
                 <button className="submit-btn">Calcular</button>
             </form>
-            <BackToHomeButton />
+            <GlobalButtons />
         </div>
     )
 }

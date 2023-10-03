@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { convertFactorial } from "../utils/ConvertFactorial";
-import BackToHomeButton from "../components/GlobalButtons";
+import { useCommonImports } from "../../hook/useCommonImports";
+
 const FactorialArrangement = () => {
+    const { useState, convertFactorial, GlobalButtons } = useCommonImports();
+
     const [valueN, setValueN] = useState('');
     const [valueP, setValueP] = useState('');
     const [result, setResult] = useState(null);
@@ -14,6 +15,7 @@ const FactorialArrangement = () => {
         setResult(factorial);
         setFormSubmitted(true);
     };
+
     return (
         <div className="container">
             <h2 className="title">Arranjo</h2>
@@ -42,7 +44,7 @@ const FactorialArrangement = () => {
                 </span>
                 <button className="submit-btn">Calcular</button>
             </form>
-            <BackToHomeButton />
+            <GlobalButtons />
         </div>
     )
 }

@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { convertFactorial } from "../utils/ConvertFactorial";
-import BackToHomeButton from "../components/GlobalButtons";
+import { useCommonImports } from "../../hook/useCommonImports";
 
 const FactorialNumber = () => {
+    const { useState, convertFactorial, GlobalButtons } = useCommonImports();
+    
     const [factorialNumber, setFactorialNumber] = useState('');
     const [result, setResult] = useState(null);
-    const [formSubmitted, setFormSubmitted] = useState(false); 
+    const [formSubmitted, setFormSubmitted] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const factorial = convertFactorial(factorialNumber);
         setResult(factorial);
-        setFormSubmitted(true); 
+        setFormSubmitted(true);
     };
 
     return (
@@ -46,7 +46,7 @@ const FactorialNumber = () => {
                 </span>
                 <button type="submit" className="submit-btn">Calcular</button>
             </form>
-            <BackToHomeButton />
+            <GlobalButtons />
         </div>
     )
 }

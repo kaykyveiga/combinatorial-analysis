@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import "./GlobalButtons.css"
-const BackToHomeButton = () => {
+const GlobalButtons = () => {
   return (
    <>
     <button onClick={() => location.reload()} id='restart'>Reniciar</button>
@@ -9,4 +9,4 @@ const BackToHomeButton = () => {
   );
 };
 
-export default BackToHomeButton;
+export default GlobalButtons;
