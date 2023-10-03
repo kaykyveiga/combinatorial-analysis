@@ -33,6 +33,7 @@ body {
 
 .form input {
   background: #fff;
+  font-size: 1rem;
   margin: .5rem .2rem;
   border-radius: .4rem;
   padding: .15rem;
@@ -45,6 +46,7 @@ body {
   color: #fff;
   margin-bottom: 1rem;
   font-weight: bold;
+  font-size: 1rem;
   text-decoration: none;
   border-radius: 1rem;
   border: none;
