@@ -23,7 +23,7 @@ const FactorialDivision = () => {
                 pelo fatorial de outro número. O fatorial de um número é definido como o produto de todos os números
                 inteiros positivos de 1 até o número em questão.
             </p>
-            <p className="text">Onde <strong>(N! / N!)</strong></p>
+            <p className="text">Onde <strong>(N! / D!)</strong></p>
             <p className="text">Digite abaixo a divisão que deseja realizar</p>
             <form className="form" onSubmit={handleSubmit}>
                 <label>
