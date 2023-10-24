@@ -3,7 +3,7 @@ import "./GlobalButtons.css"
 const GlobalButtons = () => {
   return (
    <>
-    <button onClick={() => location.reload()} id='restart'>Reniciar</button>
+    <button onClick={() => location.reload()} id='restart'>Reiniciar</button>
     <Link to="/" id='back-btn'>Voltar</Link>
     </>
   );
