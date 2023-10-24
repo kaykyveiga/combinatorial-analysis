@@ -7,6 +7,10 @@
   margin: 1rem auto;
 }
 
+footer p {
+  margin: .5rem;
+}
+
 .social-media {
   padding: 1rem;
 }
